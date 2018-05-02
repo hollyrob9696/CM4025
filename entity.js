@@ -232,6 +232,7 @@ Player.getAllInitPack = function () {
     return players;
 };
 
+
 Player.onDisconnect = function(socket){
     let player = Player.list[socket.id];
     if(!player)
@@ -269,6 +270,10 @@ Bullet = function(param){
             if(self.map === p.map && self.getDistance(p) < 32 && self.parent !== p.id) {
                 var shooter = Player.list[self.parent];
                 shooter.score += 1;
+                if (shooter.score > 1000)
+                    shooter.shield += 10;
+                if (shooter.score > 2000)
+                    shooter.shield += 20;
                 if (p.shield > 0) {
                     p.shield -= 1;
                 } else {
