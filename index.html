@@ -319,16 +319,6 @@
         ctx.drawImage(Img.map[player.map],x,y,1000,1000);
     };
 
-    var x = 50;
-    var y = 50;
-    var xSpeed = 1;
-    var ySpeed =1;
-
-        drawEnemy = function () {
-            /*x = x + xSpeed;
-            y = y + ySpeed;*/
-            ctx.drawImage(Img.enemy, x, y);
-    };
 
     var drawScore = function () {
         if(lastScore === Player.list[selfId].score)
@@ -347,18 +337,6 @@
         ctxUi.fillText(myID,50,40);
     };
 
-    var drawAllID = function () {
-        var x = 350;
-        var y = 400;
-        for(var i in Player.list)
-        var allID = Player.list[i].id;
-        var myAllID = allID.toString();
-        ctxUi.fillStyle = 'purple';
-        ctxUi.font = "10pt Arial";
-        ctxUi.fillText(myAllID,x,y);
-        x =+ 5;
-        y =+ 5;
-    };
 
     var drawWin = function() {
         var win = 0;
